@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+    <link rel="icon" href="https://cdn-icons.flaticon.com/png/512/3353/premium/3353700.png?token=exp=1643893302~hmac=0fd337fa882d242ebb1da7b7843bd2d3">
+    <title>Covid-19 Live Tracker</title>
+    <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2021/12/20/04/53/covid-19-6882296_960_720.jpg);
+        }
+
+        .blink {
+            width: 200px;
+            height: 50px;
+            padding: 15px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        span {
+            font-family: cursive;
+            color: white;
+            animation: blink 0.7s linear infinite;
+            height: auto;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            33% {
+                opacity: .3;
+            }
+            66% {
+                opacity: .6;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        .red-dot{
+            height: 80px;
+            width: 80px;
+            padding-bottom: 10px;
+            padding-top: 0;
+        }
+        .h-100{
+            font-size: 25px;
+           
+        }
+        
+    </style>
+
+</head>
+
+
+
+<body class="fixed-nav sticky-footer" id="page-top">
+    <div class="container">
+        <div class="live">
+            <h1 class="text-white display-3 font-weight-bold text-center mt-5"><span class="blink"><img class="red-dot" src="circle.png" alt=""></span> LIVE Update
+            </h1>
+        </div>
+        <div class="container-fluid">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-5">
+                    <li class="breadcrumb-item font-weight-bold h-100" aria-current="page">Coronavirus India DATA
+                    </li>
+                </ol>
+            </nav>
+            <div class="row ">
+                <div class="col-xl-3 col-sm-6 mb-3">
+                    <div class="card text-white bg-primary h-100 font-weight-bold">
+                        <div class="card-body">
+                            <div class="mr-5" id="totalCount">Total - 0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-3">
+                    <div class="card text-white bg-success o-hidden h-100 font-weight-bold">
+                        <div class="card-body">
+                            <div class="mr-5" id="activeCount">Active-0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-3">
+                    <div class="card text-white bg-warning o-hidden h-100 font-weight-bold">
+                        <div class="card-body">
+                            <div class="mr-5" id="recoverdCount">Recoverd-0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 mb-3">
+                    <div class="card text-white bg-danger o-hidden h-100 font-weight-bold">
+                        <div class="card-body">
+                            <div class="mr-5" id="deathCount">Deaths-0</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-12 col-sm-12 mb-3">
+                    <div class="card text-white bg-info o-hidden h-100 font-weight-bold">
+                        <div class="card-body">
+                            <div class="mr-5" id="LastUpdate">LastUpdate-</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-table"></i>State Wise
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>TotalConfirmed</th>
+                                    <th>Discharged</th>
+                                    <th>Deaths</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
